@@ -36,7 +36,7 @@ export default function NavLinks() {
                 'bg-sky-100 text-blue-600 hover:bg-sky-200 hover:text-blue-900':
                   pathname === link.href,
                 'hover:bg-sky-100 hover:text-blue-600': pathname !== link.href,
-              },
+              }
             )}
           >
             <LinkIcon className="w-6" />
