@@ -40,7 +40,7 @@ export async function createInvoice(prevState: State, formData: FormData) {
   });
 
   // If form validation fails, return errors early. Otherwise, continue.
-  if (!validatedFields.success) {
+  if (validatedFields.success === false) {
     return {
       errors: validatedFields.error.flatten().fieldErrors,
       message: 'Missing Fields. Failed to Create Invoice.',
@@ -83,7 +83,7 @@ export async function updateInvoice(
     status: formData.get('status'),
   });
 
-  if (!validatedFields.success) {
+  if (validatedFields.success === false) {
     return {
       errors: validatedFields.error.flatten().fieldErrors,
       message: 'Missing Fields. Failed to Update Invoice.',
